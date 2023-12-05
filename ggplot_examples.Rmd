@@ -1,0 +1,36 @@
+---
+title: "GGplot2 examples"
+author: "Jaime Vale"
+date: "2023-12-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Horizontal background colors 
+
+```{r horizontal_background_colors, echo=FALSE}
+ranges <- data.frame(
+  xmin = -Inf,
+  xmax = Inf,
+  ymin = c(0, 0.3333333, 0.6666667),
+  ymax = c(0.3333333, 0.6666667, 1)
+)
+
+# Create a data frame with 100 points on the x-axis
+points <- data.frame(x_value = seq(1, 100), y_value = runif(100))
+
+# Create the ggplot with geom_rect spanning from 0 to 10 on the y-axis
+ggplot() +
+  geom_point(data = points, aes(x = x_value, y = y_value)) +
+  geom_rect(
+    data = ranges, 
+    aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+    fill = rainbow(nrow(ranges)), 
+    alpha = 0.2) +
+  labs(title = "", x = "X", y = "Y")
+
+```
