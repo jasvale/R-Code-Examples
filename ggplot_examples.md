@@ -1,7 +1,3 @@
-GGplot2 examples
-================
-Jaime Vale
-2023-12-05
 
 # Horizontal background colors
 
