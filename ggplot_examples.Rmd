@@ -2,7 +2,7 @@
 title: "GGplot2 examples"
 author: "Jaime Vale"
 date: "2023-12-05"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
